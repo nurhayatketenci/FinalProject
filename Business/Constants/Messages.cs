@@ -12,5 +12,8 @@ namespace Business.Constants
         internal static string ProductListed = "ürünler listelendi";
         internal static string ProductsListed;
         internal static object UnitPriceInvalid;
+        public static object ProductCountOfCategoryError="bbir kategoride en fazla 10 ürün olabilir";
+        public static object ProductNameAlreadyExist="bu isimde zaten başka bir ürün var";
+        public static object ProductCategoryLimitExceded="limit aşıldı";
     }
 }
