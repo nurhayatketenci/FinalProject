@@ -46,7 +46,7 @@ namespace WebAPI
             //services.AddSingleton<IProductDal, EfProductDal>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+            services.AddCors();
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -76,7 +76,7 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(builder=>builder.WithOrigins("http://localhost:56760").AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();
